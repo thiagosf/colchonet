@@ -61,3 +61,8 @@ gem 'kaminari'
 gem 'carrierwave'
 gem 'rmagick', :require => 'RMagick'
 gem 'link_thumbnailer'
+
+gem 'toto'
+gem 'rack'
+gem 'builder'
+gem 'rdiscount'
