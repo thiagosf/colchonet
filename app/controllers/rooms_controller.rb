@@ -34,6 +34,7 @@ class RoomsController < ApplicationController
   # POST /rooms.json
   def create
     @room = Room.new(room_params)
+    @room.user = current_user
 
     respond_to do |format|
       if @room.save

@@ -8,8 +8,7 @@ class ApplicationController < ActionController::Base
   before_action do
     I18n.locale = params[:locale] || I18n.default_locale
   end
-
-
+  
   def default_url_options
     { locale: I18n.locale }
   end
@@ -28,9 +27,6 @@ class ApplicationController < ActionController::Base
   end
 
   def require_no_authentication
-    unless user_signed_in?
-      redirect_to root_path,
-        notice: t('flash.notice.already_logged_in')
-    end
+    redirect_to root_path if user_signed_in?
   end
 end

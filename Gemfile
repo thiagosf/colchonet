@@ -62,6 +62,7 @@ gem 'carrierwave'
 gem 'rmagick', :require => 'RMagick'
 gem 'link_thumbnailer'
 
+# Para funcionar push para Heroku
 gem 'toto'
 gem 'rack'
 gem 'builder'
