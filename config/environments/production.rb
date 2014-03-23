@@ -77,4 +77,20 @@ Colchonet::Application.configure do
 
   # Use default logging formatter so that PID and timestamp are not suppressed.
   config.log_formatter = ::Logger::Formatter.new
+
+  # Para funcionar envio de email com link completo
+  config.action_mailer.default_url_options = {
+    host: "localhost"
+  }
+
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+    port:           ENV['MAILGUN_SMTP_PORT'],
+    address:        ENV['MAILGUN_SMTP_SERVER'],
+    username:       ENV['MAILGUN_SMTP_LOGIN'],
+    password:       ENV['MAILGUN_SMTP_PASSWORD'],
+    port:           ENV['MAILGUN_SMTP_PORT'],
+    domain:         'fierce-everglades-2744.herokuapp.com',
+    authentication: :plain
+  }
 end
