@@ -1,0 +1,30 @@
+es:
+  users:
+    new:
+      title: Nuovo usuario
+    show:
+      title: "Perfil: %{user_name}"
+      edit: Editar perfil
+      location: "Localização: %{location}"
+      bio: "Biografia: %{bio}"
+  rooms:
+    new:
+      title: Novo quarto
+    edit:
+      title: Editando quarto
+    index:
+      title: Listando quartos
+  links:
+    back: Vueltar
+    show: Visualizar
+    edit: Editar
+    destroy: Excluir
+  messages: 
+    confirm: 'Tem certeza?'
+  general:
+    form_error: Ops.. um ou mais campos incorretos, favor corrigir
+  layout: 
+    rooms: Cuartos
+    signup: Cuenta
+    rooms_view: Visualizar cuarto
+    new_rooms: Nuovos cuartos

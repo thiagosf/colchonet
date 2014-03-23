@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Colcho.net</title>
+  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+<div class="page">
+  <div class="wrapper-header wrapper-header-fixed">
+    <header>
+      <h1><%= link_to "Colcho.net", url_for( :controller => :homes, :action => :index ) %></h1>
+      <nav>
+        <ul>
+          <% [ {:"pt-BR" => "Português"}, {:es => "Spañol"}, {:en => "English"} ].each do |value| %>
+            <li><%= link_to value.values.first.to_s, "/" + value.keys.first.to_s, :class => ( 'active' if locale.to_s == value.keys.first.to_s ) %></li>
+          <% end %>
+        </ul>
+      </nav>
+    </header>
+    <nav id="navbar-top">
+      <% if user_signed_in? %>
+        <%= render 'layouts/user_navbar' %>
+      <% else %>
+        <%= render 'layouts/visitor_navbar' %>
+      <% end %>
+    </nav>
+  </div>
+  <section class="container">
+    <%= yield %>
+  </section>
+  <footer>
+    <p><em>Colcho.net - Código aberto, licença GPL e MIT</em></p>
+    <blockquote>
+      <p>Ruby foi construído para tornar os programadores mais felizes.</p>
+      <small>- Yukihiro "Matz" Matsumoto</small>
+      <em>:D</em>
+    </blockquote>
+  </footer>
+</div>
+</body>
+</html>

@@ -1,0 +1,4 @@
+<%= form_for rooms_path, method: :get, :html => { :class => 'search' } do %>
+  <%= text_field_tag :q, @search_query, placeholder: t('.search_for') %>
+  <%= button_tag '<i class="fa fa-search"></i>'.html_safe %>
+<% end %>

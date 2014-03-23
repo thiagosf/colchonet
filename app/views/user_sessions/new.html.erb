@@ -1,0 +1,22 @@
+<h1><%= t '.title' %></h1>
+<% if @user_session.errors.has_key? :base %>
+  <p id="notice"><%= @user_session.errors[:base].join(', ') %></p>
+<% end %>
+
+<%= form_for @user_session, :html => { :class => 'form' } do |f| %>
+  <div class="field">
+    <%= f.label :email %>
+    <%= f.text_field :email %>
+    <%= error_tag @user_session, :email %>
+  </div>
+  <div class="field">
+    <%= f.label :password %>
+    <%= f.password_field :password %>
+    <%= error_tag @user_session, :password %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
+
+<p><%= link_to t('.sign_up'), new_user_path %></p>

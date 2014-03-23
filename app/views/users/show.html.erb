@@ -1,0 +1,14 @@
+<%= show_notice notice %>
+
+<h1><%= t 'activerecord.attributes.user.full_name' %>: <%= @user.full_name %></h1>
+
+<ul>
+  <li><%= t '.location', location: @user.location %></li>
+  <li><%= t '.bio', bio: @user.bio %></li>
+</ul>
+
+<%= link_to t('links.edit'), edit_user_path(@user) %>
+<%= link_to t('links.back'), root_path %>
+
+<h2><%= current_user == @user ? t('layout.my_rooms') : t('layout.rooms_of', :name => @user.full_name) %></h2>
+<%= render @user.rooms %>

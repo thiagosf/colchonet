@@ -1,0 +1,12 @@
+<%= show_notice notice %>
+<h1>Cadastros</h1>
+<ul>
+  <li><%= link_to t('layout.signup'), new_user_path %></li>
+  <li><%= link_to t('layout.rooms_view'), rooms_path %></li>
+</ul>
+<h2><%= t 'layout.new_rooms' %></h2>
+<ul>
+  <% @rooms.each do |room| %>
+    <li><%= link_to room.complete_name, room %></li>
+  <% end %>
+</ul>

@@ -1,0 +1,25 @@
+<div class="room-item">
+  <hr />
+  <% if room.kind_of?(RoomPresenter) %>
+    <%= render partial: 'review', locals: { room: room } %>
+  <% end %>
+  <small class="created"><%= l room.created_at, format: :long %></small>
+  <h2>
+    #<%= room.id %> 
+    <%= link_to highlight(room.title, @search_query), room_path(room) %>
+    <small><%= highlight(room.location, @search_query) %></small>
+    <em>, <%= t('layout.room_by_html', link: link_to(room.user.full_name, user_path(room.user)))  unless room.user.nil? %></em>
+  </h2>
+  <% if room.kind_of?(RoomPresenter) && room.has_picture? %>
+    <figure><%= link_to image_tag(room.thumb_url), room.picture_url %></figure>
+  <% end %>
+  <blockquote><%= highlight(room.description || '', @search_query) %></blockquote>
+  <% if belongs_to_user(room) || false %>
+    <div class="actions">
+      <%= link_to t('links.show'), room %> 
+      <%= link_to t('links.edit'), edit_room_path(room) %> 
+      <%= link_to t('links.destroy'), room, method: :delete, data: { confirm: t('messages.confirm') } %> 
+    </div>
+  <% end %>
+  <div class="clear"></div>
+</div>
