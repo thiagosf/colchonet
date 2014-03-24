@@ -44,6 +44,7 @@ Colchonet.Rooms.Reviews = {
 
 		this.review.find('input').on('change', function() {
 			stars.off('mouseenter').off('mouseleave').off('click');
+			$(this).closest('form').find('.user-review-info small strong').html( $(this).val() );
 			$(this).parent('form').submit();
 		});
 	},

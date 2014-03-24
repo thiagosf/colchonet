@@ -1,3 +1,0 @@
-== Colcho.net
-
-Projeto de teste de Ruby on Rails.

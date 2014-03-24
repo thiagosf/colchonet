@@ -24,6 +24,10 @@ class RoomPresenter
       find_or_initialize_by(user_id: @context.current_user.id)
   end
 
+  def has_user_review?
+    @review.points
+  end
+
   def review_route
     [@room, review]
   end

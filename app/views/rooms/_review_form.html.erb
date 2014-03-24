@@ -8,11 +8,11 @@
     <% end %>
     <%= f.submit %>
     <%= t 'rooms.review.stats', count: room.total_reviews %>
-    <p class="text-right">
-      <small>
-        Sua avaliação foi de: <strong>3 estrelas</strong>
-      </small>
-    </p>
+    <% if room.has_user_review? %>
+      <p class="text-right user-review-info">
+        <small><%= t 'layout.your_review_html', count: room.review.points %></small>
+      </p>
+    <% end %>
   <% end %>
 <% else %>
   <span class="login-required">

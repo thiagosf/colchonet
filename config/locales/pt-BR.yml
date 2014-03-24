@@ -251,6 +251,7 @@ pt-BR:
     form_error: Ops.. um ou mais campos incorretos, favor corrigir
 
   layout: 
+    registers: Cadastros
     rooms: Quartos
     signup: Cadastro
     rooms_view: Visualizar quartos
@@ -263,6 +264,9 @@ pt-BR:
     my_rooms: "Meu(s) quarto(s)"
     rooms_of: "Quarto(s) do(a) %{name}"
     room_details: Detalhes do quarto
+    your_review_html: 
+      one: "Sua avaliação foi de 1 estrela"
+      other: "Sua avaliação foi de <strong>%{count}</strong> estrelas"
 
   signup:
     confirm_email:

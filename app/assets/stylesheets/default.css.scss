@@ -3,6 +3,7 @@
 // Base
 $base-font-family: Helvetica,Arial,Tahoma;
 $base-font-family-serif: "Georgia";
+$logo-font: "Allura";
 $icon-font: "FontAwesome";
 $base-color: #654D2B;
 
@@ -105,11 +106,12 @@ body {
 		
 		header {
 			background: #C06248;
-			padding: 20px;
+			padding: 5px 20px;
 			border-bottom: 1px solid darken(#C06248, 15);
 			h1 {
-				font-size: 2em;
-				font-weight: 400;
+				font-family: $logo-font;
+				font-size: 3em;
+				font-weight: 100;
 				@include text-shadow( rgba(black, 0.72) -1px 1px 1px);
 				a {
 					color: white;
