@@ -1,6 +1,8 @@
 <h1><%= t '.title' %></h1>
 <% if @user_session.errors.has_key? :base %>
   <p id="notice"><%= @user_session.errors[:base].join(', ') %></p>
+<% else %>
+  <%= show_notice(notice) %>
 <% end %>
 
 <%= form_for @user_session, :html => { :class => 'form' } do |f| %>

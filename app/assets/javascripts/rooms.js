@@ -2,7 +2,7 @@ var Colchonet = Colchonet || {};
 
 Colchonet.Rooms = {
 	init: function() {
-		this.Reviews.init();
+		Colchonet.Rooms.Reviews.init();
 	},
 };
 
@@ -61,4 +61,5 @@ Colchonet.Rooms.Reviews = {
 	}
 };
 
-$(function() { Colchonet.Rooms.init();  });
+$(function() { Colchonet.Rooms.init(); });
+$(document).on( 'page:load', Colchonet.Rooms.init );

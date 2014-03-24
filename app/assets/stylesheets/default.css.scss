@@ -1,9 +1,15 @@
 @import "compass/css3";
 
+// Base
 $base-font-family: Helvetica,Arial,Tahoma;
 $base-font-family-serif: "Georgia";
 $icon-font: "FontAwesome";
 $base-color: #654D2B;
+
+// Responsive variables
+$width-name: max-width;
+$break-small: 640px;
+$break-large: 1200px;
 
 @mixin default_margin {
 	margin:0 0 20px 0;
@@ -16,6 +22,10 @@ $base-color: #654D2B;
 	font-size: 1em;
 	&:focus {
 		border-color:darken(#654D2B, 10);
+	}
+	@media screen and ($width-name : $break-small) {
+		@include box-sizing(border-box);
+		width: 100%;
 	}
 }
 
@@ -50,6 +60,10 @@ body {
 		font-size: 1.5em;
 	}
 
+	.text-right {
+		text-align: right;
+	}
+
 	.actions {
 		margin:20px 0;
 		input {
@@ -62,6 +76,13 @@ body {
 			&:hover {
 				background: darken( #654D2B, 5 );
 			}
+			@media screen and ($width-name : $break-small) {
+				@include box-sizing(border-box);
+				width: 100%;
+			}
+		}
+		@media screen and ($width-name : $break-small) {
+			text-align: center;
 		}
 	}
 
@@ -76,6 +97,9 @@ body {
 				position: fixed;
 				width: 100%;
 				z-index: 10;
+				@media screen and ($width-name : $break-small) {
+					position: static;
+				}
 			}
 		}
 		
@@ -112,6 +136,12 @@ body {
 						}
 					}
 				}
+				@media screen and ($width-name : $break-small) {
+					position: static;
+					top: auto;
+					left: auto;
+					margin-bottom: 20px;
+				}
 			}
 		}
 
@@ -137,6 +167,9 @@ body {
 
 		.container {
 			padding: 130px 20px 20px 20px;
+			@media screen and ($width-name : $break-small) {
+				padding-top: 20px;
+			}
 
 			h1, h2, h3, h4, h5, h6 {
 				font-family: $base-font-family-serif;
@@ -359,6 +392,10 @@ body {
 					right: 5px;
 					font-size: 1.2em;
 					color: lighten($base-color, 40);
+				}
+				@media screen and ($width-name : $break-small) {
+					float: none;
+					margin-bottom: 10px;
 				}
 			}
 

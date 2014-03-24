@@ -12,5 +12,5 @@
 //
 //= require jquery
 //= require jquery_ujs
-// require turbolinks // desabilitando para testar
+//= require turbolinks
 //= require_tree .

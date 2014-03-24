@@ -326,6 +326,7 @@ pt-BR:
       already_logged_in: Você já está logado
       room_created: Quarto criado com sucesso!
       room_updated: Quarto atualizado com sucesso!
+      user_created: Confirme seu cadastro através da mensagem enviada para seu e-mail
 
   views: 
     pagination:

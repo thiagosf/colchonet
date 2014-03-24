@@ -4,9 +4,9 @@ class ConfirmationsController < ApplicationController
 
     if user.present?
       user.confirm!
-      redirect_to user, notice: I18n.t('confirmations.success')
+      redirect_to new_user_sessions_path, notice: I18n.t('confirmations.success')
     else
-      redirect_to root_path, notice: I18n.t('confirmations.already_confirmed')
+      redirect_to new_user_sessions_path, notice: I18n.t('confirmations.already_confirmed')
     end
   end
 end

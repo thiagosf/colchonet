@@ -25,7 +25,7 @@ class UsersController < ApplicationController
     @user = User.new(users_params)
     if @user.save
       Signup.confirm_email(@user).deliver
-      redirect_to @user, notice: "Cadastro efetuado com sucesso!"
+      redirect_to root_path, notice: t('flash.notice.user_created')
     else
       render action: :new
     end

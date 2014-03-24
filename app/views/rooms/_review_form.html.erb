@@ -1,12 +1,18 @@
 <% if room.can_review? %>
   <%= form_for room.review_route, remote: true do |f| %>
     <% room.review_points.each do |point| %>
-      <%= f.radio_button :points, point %>
+      <%= f.radio_button :points, point, :checked => ( point == room.stars ? true : false ) %>
       <%= f.label :points, point, value: point do %>
         <i class="icon-star"></i>
       <% end %>
     <% end %>
     <%= f.submit %>
+    <%= t 'rooms.review.stats', count: room.total_reviews %>
+    <p class="text-right">
+      <small>
+        Sua avaliação foi de: <strong>3 estrelas</strong>
+      </small>
+    </p>
   <% end %>
 <% else %>
   <span class="login-required">

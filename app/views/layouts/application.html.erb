@@ -10,7 +10,6 @@
 <div class="page">
   <div class="wrapper-header wrapper-header-fixed">
     <header>
-      <h1><%= link_to "Colcho.net", url_for( :controller => :homes, :action => :index ) %></h1>
       <nav>
         <ul>
           <% [ {:"pt-BR" => "Português"}, {:es => "Spañol"}, {:en => "English"} ].each do |value| %>
@@ -18,6 +17,7 @@
           <% end %>
         </ul>
       </nav>
+      <h1><%= link_to "Colcho.net", url_for( :controller => :homes, :action => :index ) %></h1>
     </header>
     <nav id="navbar-top">
       <% if user_signed_in? %>
