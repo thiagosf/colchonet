@@ -63,7 +63,9 @@ gem 'rmagick', :require => 'RMagick'
 gem 'link_thumbnailer'
 
 # Para funcionar push para Heroku
-gem 'toto'
-gem 'rack'
-gem 'builder'
-gem 'rdiscount'
+group :production do
+  gem 'toto'
+  gem 'rack'
+  gem 'builder'
+  gem 'rdiscount'
+end
