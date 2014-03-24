@@ -142,7 +142,7 @@ body {
 					position: static;
 					top: auto;
 					left: auto;
-					margin-bottom: 20px;
+					margin: 15px 0;
 				}
 			}
 		}
@@ -181,11 +181,17 @@ body {
 			h1 {
 				font-size: 3em;
 				@include default_margin;
+				@media screen and ($width-name : $break-small) {
+					font-size: 2em;
+				}
 			}
 
 			h2 {
 				margin: 10px 0;
 				font-size: 2em;
+				@media screen and ($width-name : $break-small) {
+					font-size: 1.5em;
+				}
 			}
 
 			ul {
@@ -293,6 +299,14 @@ body {
 						border: 1px solid lighten($base-color, 40);
 						padding: 2px;
 						display: block;
+						@media screen and ($width-name : $break-small) {
+							display: inline-block;
+						}
+					}
+					@media screen and ($width-name : $break-small) {
+						text-align: center;
+						float: none;
+						margin: 20px 0;
 					}
 				}
 				blockquote {
@@ -329,6 +343,11 @@ body {
 				.review {
 					float: right;
 					position: relative;
+					@media screen and ($width-name : $break-small) {
+						float: none;
+						position: static;
+						margin:0 0 10px 0;
+					}
 					.icon-ok, .icon-remove {
 						position: absolute;
 						right: 0;
@@ -484,6 +503,9 @@ body {
 					&:after {
 						content: "\201D";
 						margin-left: 5px;
+					}
+					@media screen and ($width-name : $break-small) {
+						font-size: 1.5em;
 					}
 				}
 				small {
