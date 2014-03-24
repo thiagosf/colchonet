@@ -7,8 +7,10 @@
   <li><%= t '.bio', bio: @user.bio %></li>
 </ul>
 
-<%= link_to t('links.edit'), edit_user_path(@user) %>
-<%= link_to t('links.back'), root_path %>
+<% if current_user == @user %>
+  <%= link_to t('links.edit'), edit_user_path(@user) %>
+  <%= link_to t('links.back'), root_path %>
+<% end %>
 
 <h2><%= current_user == @user ? t('layout.my_rooms') : t('layout.rooms_of', :name => @user.full_name) %></h2>
 <%= render @user.rooms %>
