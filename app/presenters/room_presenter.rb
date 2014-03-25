@@ -49,7 +49,7 @@ class RoomPresenter
   end
 
   def total_reviews
-    @room.reviews.size
+    (@room.reviews.size if self.stars > 0) || 0
   end
 
   def picture_url
