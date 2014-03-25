@@ -1,9 +1,13 @@
 class UsersController < ApplicationController
+  PER_PAGE = 10
+
   before_action :set_user, only: [:show, :edit, :update]
   before_action :can_change, only: [:edit, :update]
   before_action :require_no_authentication, only: [:new, :create]
 
   def show
+    rooms = @user.rooms.page(params[:page]).per(PER_PAGE)
+    @rooms = RoomCollectionPresenter.new(rooms.most_recent, self)
   end
 
   def edit

@@ -13,4 +13,7 @@
 <% end %>
 
 <h2><%= current_user == @user ? t('layout.my_rooms') : t('layout.rooms_of', :name => @user.full_name) %></h2>
-<%= render @user.rooms %>
+
+<%= render partial: 'rooms/room', collection: @rooms %>
+
+<%= paginate @rooms %>

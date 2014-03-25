@@ -1,7 +1,7 @@
 <div class="room-item">
   <hr />
   <% if room.kind_of?(RoomPresenter) %>
-    <%= render partial: 'review', locals: { room: room } %>
+    <%= render partial: 'rooms/review', locals: { room: room } %>
   <% end %>
   <small class="created"><%= l room.created_at, format: :long %></small>
   <h2>
