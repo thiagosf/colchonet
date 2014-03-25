@@ -2,10 +2,14 @@ class Rooms::ReviewsController < ApplicationController
   before_filter :require_authentication
 
   def create
-    review = room.reviews.
-      find_or_initialize_by(user_id: current_user.id)
-    review.update!(review_params)
-    head :ok
+    begin
+      review = room.reviews.
+        find_or_initialize_by(user_id: current_user.id)
+      review.update!(review_params)
+      head :ok
+    rescue
+      head :not_found
+    end
   end
 
   def update
@@ -15,7 +19,7 @@ class Rooms::ReviewsController < ApplicationController
   private
 
     def room
-      @room ||= Room.friendly.find(params[:room_id])
+      @room ||= Room.friendly.where.not({ user_id: current_user.id }).find(params[:room_id])
     end
 
     def review_params
