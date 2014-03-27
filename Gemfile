@@ -49,6 +49,11 @@ gem 'bcrypt', '~> 3.1.7'
 # Use debugger
 gem 'debugger', group: [:development, :test]
 
+# Testes
+group :development, :test do
+  gem 'rspec-rails'
+end
+
 # Font-awesome
 gem 'font-awesome-rails'
 

@@ -23,7 +23,7 @@ class Room < ActiveRecord::Base
     if query.present?
       where(['location LIKE :query OR title LIKE :query OR description LIKE :query', query: "%#{query}%"])
     else
-      scoped
+      all
     end
   end
 
