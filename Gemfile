@@ -76,3 +76,6 @@ group :production do
   gem 'builder'
   gem 'rdiscount'
 end
+
+# Auth
+gem 'devise'
