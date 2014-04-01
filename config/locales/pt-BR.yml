@@ -339,3 +339,9 @@ pt-BR:
       previous: Anterior
       next: Próximo
       truncate: ...
+
+  site:
+    new: Novo
+    show: Visualizar
+    destroy: Deletar
+    edit: Editar

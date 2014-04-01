@@ -1,0 +1,9 @@
+<div class="page-header">
+	<h1><%= t('site.editing_admin_user') %></h1>
+</div>
+<%= breadcrumb %>
+
+<%= render 'form' %>
+
+<%= link_to '<i class="fa fa-search"></i> '.html_safe + t("site.show"), @admin_user, { :class => 'btn btn-primary' } %> 
+<%= back_link admin_users_path %>

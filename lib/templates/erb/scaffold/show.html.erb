@@ -1,0 +1,16 @@
+<div class="page-header">
+  <h1><%%= t('site.show_<%= singular_table_name %>') %></h1>
+</div>
+<%%= breadcrumb %>
+
+<p id="notice"><%%= notice %></p>
+
+<% attributes.reject(&:password_digest?).each do |attribute| -%>
+<p>
+  <strong><%= attribute.human_name %>:</strong>
+  <%%= @<%= singular_table_name %>.<%= attribute.name %> %>
+</p>
+
+<% end -%>
+<%%= link_to t('site.edit'), edit_<%= singular_table_name %>_path(@<%= singular_table_name %>), { :class => 'btn btn-success' } %> 
+<%%= back_link <%= index_helper %>_path %>

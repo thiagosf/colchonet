@@ -1,10 +1,7 @@
 Colchonet::Application.routes.draw do
   LOCALES ||= /en|es|pt\-BR/ 
 
-  devise_for :admins, controllers: { 
-    # sessions: "admin/sessions", 
-    # passwords: "admin/passwords" 
-  }, layout: "admin"
+  devise_for :admins
   
   # Site  
   scope "(:locale)", locale: LOCALES do
@@ -22,7 +19,9 @@ Colchonet::Application.routes.draw do
 
   # Admin
   namespace :admin do
-    resources :rooms, :users
+    resources :rooms
+    resources :users, except: [:create, :new]
+    get "about" => "dashboards#about"
     root to: "dashboards#index"
   end
 end

@@ -1,0 +1,9 @@
+<div class="page-header">
+	<h1><%%= t('site.editing_<%= singular_table_name %>') %></h1>
+</div>
+<%%= breadcrumb %>
+
+<%%= render 'form' %>
+
+<%%= link_to '<i class="fa fa-search"></i> '.html_safe + t("site.show"), @<%= singular_table_name %>, { :class => 'btn btn-primary' } %> 
+<%%= back_link <%= index_helper %>_path %>

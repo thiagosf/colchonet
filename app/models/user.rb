@@ -38,4 +38,8 @@ class User < ActiveRecord::Base
             find_by(email: email).
             try(:authenticate, password)
   end
+
+  def name_for_select
+    "##{self.id} - #{self.full_name}"
+  end
 end

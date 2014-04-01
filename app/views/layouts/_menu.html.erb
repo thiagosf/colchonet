@@ -1,0 +1,16 @@
+<div class="navbar-collapse collapse">
+  <ul class="nav navbar-nav">
+    <li class="hidden-xs hidden-sm divider-vertical"></li>
+    <li class="dropdown">
+      <a class="dropdown-toggle" data-toggle="dropdown" href="#"><%= get_icon('plus') %> <%= t('site.new') %></a>
+      <ul class="dropdown-menu">
+        <% @plus_nav.each do |model| %>
+          <li><%= link_to t( 'site.' + model.singularize ), send("new_admin_#{model.singularize}_path") %></li>
+        <% end %>
+      </ul>
+    </li>
+  </ul>
+  <ul class="nav navbar-nav pull-right">
+    <li><%= link_to( get_icon("off") + "Sair" , destroy_admin_session_path , method: :delete) if admin_signed_in? %></li>
+  </ul>
+</div>

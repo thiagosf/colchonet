@@ -1,2 +1,19 @@
-Dashboard da aplicacao
-<%= link_to "Sair", destroy_admin_session_path, method: :delete %>
+<div class="page-header">
+  <h1><%= t('admin.dashboard') %></h1>
+</div>
+<div class="content">
+  <div class="row">
+    <div class="col-md-6 text-center">
+      <div class="well">
+        <h1><span class="label label-success large"><%= @count_rooms %></span></h1>
+        <h3><%= t "admin.registered_rooms" %></h3>
+      </div>
+    </div>
+    <div class="col-md-6 text-center">
+      <div class="well">
+        <h1><span class="label label-success"><%= @count_users %></span></h1>
+        <h3><%= t "admin.registered_users" %></h3>
+      </div>
+    </div>
+  </div>
+</div>

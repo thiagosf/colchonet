@@ -1,0 +1,33 @@
+<%= form_for([:admin, @admin_user], :html_options => { :class => 'form' }) do |f| %>
+  <% if @admin_user.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@admin_user.errors.count, "error") %> prohibited this admin_user from being saved:</h2>
+
+      <ul>
+      <% @admin_user.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <%= f.label :full_name %><br>
+    <%= f.text_field :full_name, :class => 'form-control' %>
+  </div>
+  <div class="form-group">
+    <%= f.label :email %><br>
+    <%= f.text_field :email, :class => 'form-control' %>
+  </div>
+  <div class="form-group">
+    <%= f.label :location %><br>
+    <%= f.text_field :location, :class => 'form-control' %>
+  </div>
+  <div class="form-group">
+    <%= f.label :bio %><br>
+    <%= f.text_field :bio, :class => 'form-control' %>
+  </div>
+  <div class="form-group actions">
+    <%= f.submit :class => 'btn btn-success' %>
+  </div>
+<% end %>
