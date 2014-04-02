@@ -2,7 +2,7 @@ class RoomsController < ApplicationController
   before_action :set_room, only: [:edit, :update, :destroy]
   before_action :require_authentication, only: [:new, :edit, :create, :update, :destroy]
 
-  PER_PAGE = 10
+  PER_PAGE = 1
 
   # GET /rooms
   # GET /rooms.json

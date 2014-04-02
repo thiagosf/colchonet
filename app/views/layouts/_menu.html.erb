@@ -11,6 +11,6 @@
     </li>
   </ul>
   <ul class="nav navbar-nav pull-right">
-    <li><%= link_to( get_icon("off") + "Sair" , destroy_admin_session_path , method: :delete) if admin_signed_in? %></li>
+    <li><%= link_to( get_icon("off") + t("admin.logout") , destroy_admin_session_path , method: :delete) if admin_signed_in? %></li>
   </ul>
 </div>

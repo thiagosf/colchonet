@@ -62,6 +62,7 @@ gem 'friendly_id'
 
 # Paginacao
 gem 'kaminari'
+gem 'kaminari-bootstrap', '~> 3.0.1'
 
 # Upload
 gem 'carrierwave'

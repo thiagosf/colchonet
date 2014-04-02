@@ -1,10 +1,12 @@
 class Admin::RoomsController < Admin::BaseAdminController
   before_action :set_admin_room, only: [:show, :edit, :update, :destroy]
 
+  PER_PAGE = 10
+
   # GET /admin/rooms
   # GET /admin/rooms.json
   def index
-    @admin_rooms = Admin::Room.all
+    @admin_rooms = Admin::Room.page(params[:page]).per(PER_PAGE)
   end
 
   # GET /admin/rooms/1

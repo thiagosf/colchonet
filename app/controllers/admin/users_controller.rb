@@ -1,10 +1,12 @@
 class Admin::UsersController < Admin::BaseAdminController
   before_action :set_admin_user, only: [:show, :edit, :update, :destroy]
 
+  PER_PAGE = 10
+
   # GET /admin/users
   # GET /admin/users.json
   def index
-    @admin_users = Admin::User.all
+    @admin_users = Admin::User.page(params[:page]).per(PER_PAGE)
   end
 
   # GET /admin/users/1
