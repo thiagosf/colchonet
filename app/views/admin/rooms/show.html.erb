@@ -1,5 +1,5 @@
 <div class="page-header">
-  <h1><%= t('site.show_admin_room') %></h1>
+  <h1><%= t('admin.show_room') %></h1>
 </div>
 <%= breadcrumb %>
 
@@ -30,5 +30,5 @@
   <%= image_tag @admin_room.picture.thumb %>
 </p>
 
-<%= link_to t('site.edit'), edit_admin_room_path(@admin_room), { :class => 'btn btn-success' } %> 
+<%= link_to t('admin.edit'), edit_admin_room_path(@admin_room), { :class => 'btn btn-success' } %> 
 <%= back_link admin_rooms_path %>

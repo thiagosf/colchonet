@@ -34,7 +34,7 @@ module TagsHelper
 	# Breadcrumb
 	def breadcrumb
 		%{<ol class="breadcrumb">
-		  <li>#{link_to t("site.dashboard"), "/"}</li>
+		  <li>#{link_to t("site.dashboard"), "/admin"}</li>
 		  <li>#{link_to t("site."+controller.controller_name), "/" + controller.controller_path}</li>
 		  <li>#{t("site." + controller.action_name)}</li>
 		</ol>}.html_safe

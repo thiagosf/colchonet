@@ -33,9 +33,9 @@
     <div class="row">
       <div class="col-sm-3 col-md-2 sidebar">
         <ul class="nav nav-sidebar">
-          <% @nav.each do |model| %>
-            <% @class_top_nav = if model == controller.controller_name then 'active' else '' end %>
-            <li class="<%= @class_top_nav %>"><%= link_to t( 'site.' + model ), send("admin_#{model}_path", model)  %></li>
+          <% @nav.each do |item| %>
+            <% @class_top_nav = if item["model"] == controller.controller_name then 'active' else '' end %>
+            <li class="<%= @class_top_nav %>"><%= link_to get_icon(item["icon"]) + t( 'admin.' + item["model"] ), send("admin_#{item["model"]}_path", item["model"])  %></li>
           <% end %>
         </ul>
       </div>
@@ -44,11 +44,11 @@
         <hr class="featurette-divider">
         <footer>
           <p class="pull-right">
-            <a href="#"><%= t('site.back_to_top') %></a>
+            <a href="#"><%= t('admin.back_to_top') %></a>
           </p>
           <p>
             &copy; <%= Time.now.year %> <%= @meta_title %> 
-            &middot; <%= link_to t('site.about'), '/admin/about', { :data => { :toggle => 'modal', :target => '#mainModal' } } %>
+            &middot; <%= link_to t('admin.about'), '/admin/about', { :data => { :toggle => 'modal', :target => '#mainModal' } } %>
           </p>
         </footer>
       </div>

@@ -1,5 +1,5 @@
 <div class="page-header">
-  <h1><%%= t('site.<%= singular_table_name %>') %></h1>
+  <h1><%%= t('admin.<%= singular_table_name %>') %></h1>
 </div>
 <%%= breadcrumb %>
 <p><%%= add_link(new_<%= singular_table_name %>_path) %></p>
@@ -7,9 +7,9 @@
   <thead>
     <tr>
 <% attributes.reject(&:password_digest?).each do |attribute| -%>
-      <th><%%= t('site.<%= attribute.name %>') %></th>
+      <th><%%= t('admin.<%= attribute.name %>') %></th>
 <% end -%>
-      <th><%%= t('site.actions') %></th>
+      <th><%%= t('admin.actions') %></th>
     </tr>
   </thead>
   <tbody>

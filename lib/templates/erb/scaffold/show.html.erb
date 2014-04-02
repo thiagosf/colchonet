@@ -1,5 +1,5 @@
 <div class="page-header">
-  <h1><%%= t('site.show_<%= singular_table_name %>') %></h1>
+  <h1><%%= t('admin.show_<%= singular_table_name %>') %></h1>
 </div>
 <%%= breadcrumb %>
 
@@ -12,5 +12,5 @@
 </p>
 
 <% end -%>
-<%%= link_to t('site.edit'), edit_<%= singular_table_name %>_path(@<%= singular_table_name %>), { :class => 'btn btn-success' } %> 
+<%%= link_to t('admin.edit'), edit_<%= singular_table_name %>_path(@<%= singular_table_name %>), { :class => 'btn btn-success' } %> 
 <%%= back_link <%= index_helper %>_path %>

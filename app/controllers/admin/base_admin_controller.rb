@@ -8,7 +8,10 @@ class Admin::BaseAdminController < ApplicationController
     
     # Admin
     @meta_title = "Colcho.net"
-    @nav = ["rooms", "users"]
+    @nav = [
+      {"model" => "rooms", "icon" => "home"}, 
+      {"model" => "users", "icon" => "user"}
+    ]
     @plus_nav = ["rooms"]
   end
 end
